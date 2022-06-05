@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ShowTrack</string>
+    <string name="adicionar_nova_s_rie">Adicionar nova série</string>
+    <string name="hm_nenhuma_s_rie_para_ser_exibida_aqui">Hm, nenhuma série para ser exibida aqui...</string>
+    <string name="que_tal_adicionar_uma_nova">Que tal adicionar uma nova?</string>
+</resources>
