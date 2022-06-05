@@ -10,5 +10,7 @@
     <color name="cor_primaria">#800000</color>
     <color name="cor_secundaria">#A4011E</color>
     <color name="cor_terciaria">#F4042E</color>
+    <color name="soft_grey">#C1C3CB</color>
+    <color name="dark_grey">#5B5B5B</color>
     <color name="transparent">#00F4042E</color>
 </resources>

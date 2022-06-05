@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.SearchActivity">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/arrow_left_medium_red" />
+
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@id/backButton"
+        android:fontFamily="@font/glory_regular"
+        android:text="Voltar"
+        android:textColor="@color/cor_primaria"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="345dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/headerText"
+        android:layout_marginTop="25dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/outlined_border"
+        android:hint="Pesquisar nova série"
+        android:textSize="16sp"
+        android:fontFamily="@font/glory_regular"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:paddingLeft="14dp"
+        android:drawablePadding="4dp"
+        android:textColorHint="@color/soft_grey"
+        android:drawableLeft="@drawable/search_min" />
+
+    <ListView
+        android:id="@+id/listSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBox"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="24dp"/>
+
+</RelativeLayout>
