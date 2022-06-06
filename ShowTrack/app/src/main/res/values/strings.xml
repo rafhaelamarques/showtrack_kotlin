@@ -3,4 +3,11 @@
     <string name="adicionar_nova_s_rie">Adicionar nova série</string>
     <string name="hm_nenhuma_s_rie_para_ser_exibida_aqui">Hm, nenhuma série para ser exibida aqui...</string>
     <string name="que_tal_adicionar_uma_nova">Que tal adicionar uma nova?</string>
+    <string name="voltar">Voltar</string>
+    <string name="novo_usuario">Novo usuário(a)</string>
+    <string name="nome">Nome</string>
+    <string name="e_mail">E-mail</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="concluir">Concluir</string>
 </resources>
