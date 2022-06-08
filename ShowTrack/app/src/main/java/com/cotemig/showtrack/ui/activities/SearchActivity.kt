@@ -2,17 +2,51 @@ package com.cotemig.showtrack.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ListView
 import com.cotemig.showtrack.R
+import com.cotemig.showtrack.models.MazeApi
+import com.cotemig.showtrack.models.Serie
+import com.cotemig.showtrack.services.MazeInitializer
+import com.cotemig.showtrack.ui.adapters.SearchAdapter
+import retrofit2.Call
+import retrofit2.Response
 
 class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        getSearchResult()
+        var searchText = findViewById<EditText>(R.id.searchBox)
+        var searchBtn = findViewById<ImageButton>(R.id.searchButton)
+
+        searchBtn.setOnClickListener { getSearchResult(serie = searchText.text.toString()) }
+
     }
 
-    private fun getSearchResult() {
-        TODO("Not yet implemented")
+    private fun getSearchResult(serie: String) {
+        var s = MazeInitializer().getSearchService()
+        var call = s.searchSerie(q = serie)
+
+        call.enqueue(object : retrofit2.Callback<List<MazeApi>> {
+            override fun onResponse(
+                call: Call<List<MazeApi>>,
+                response: Response<List<MazeApi>>
+            ) {
+                response.body()?.let{
+                    showFeed(it)
+                }
+            }
+
+            override fun onFailure(call: Call<List<MazeApi>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    fun showFeed(list: List<MazeApi>){
+        var result = findViewById<ListView>(R.id.listSearch)
+        result.adapter = SearchAdapter(this, list)
     }
 }

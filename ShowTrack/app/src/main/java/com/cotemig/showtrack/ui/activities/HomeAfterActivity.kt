@@ -2,6 +2,7 @@ package com.cotemig.showtrack.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cotemig.showtrack.R
 
 class HomeAfterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

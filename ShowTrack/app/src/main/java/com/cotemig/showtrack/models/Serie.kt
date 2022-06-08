@@ -1,6 +1,6 @@
 package com.cotemig.showtrack.models
 
-class Serie {
+class Serie{
     var id: Int = 0
     var name: String = ""
     var rating: String = ""

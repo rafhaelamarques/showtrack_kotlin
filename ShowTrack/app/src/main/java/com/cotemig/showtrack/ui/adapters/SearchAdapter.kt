@@ -10,9 +10,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import coil.load
 import com.cotemig.showtrack.R
+import com.cotemig.showtrack.models.MazeApi
 import com.cotemig.showtrack.models.Serie
 
-class SearchAdapter (var context: Context, var list: List<Serie>) : BaseAdapter() {
+class SearchAdapter (var context: Context, var list: List<MazeApi>) : BaseAdapter() {
     override fun getCount(): Int {
         return list.size
     }
@@ -34,11 +35,11 @@ class SearchAdapter (var context: Context, var list: List<Serie>) : BaseAdapter(
         var summary = view.findViewById<TextView>(R.id.summarySearch)
         var banner = view.findViewById<ImageView>(R.id.bannerSearch)
 
-        title.text = (list[position].name)
-        plataform.text = (list[position].plataform)
-        rating.text = (list[position].rating)
-        summary.text = (list[position].summary)
-        banner.load(list[position].image)
+        title.text = (list[position].serie?.name)
+        plataform.text = (list[position].serie?.plataform)
+        rating.text = (list[position].serie?.rating)
+        summary.text = (list[position].serie?.summary)
+        banner.load(list[position].serie?.image)
 
         return view
     }
