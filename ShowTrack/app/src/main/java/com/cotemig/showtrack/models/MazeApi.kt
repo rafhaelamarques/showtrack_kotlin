@@ -2,10 +2,7 @@ package com.cotemig.showtrack.models
 
 import com.google.gson.internal.LinkedTreeMap
 
-class MazeApi  (json: LinkedTreeMap<String, Serie>)  {
+class MazeApi   {
     var serie: Serie? = null
 
-    init {
-        this.serie = json["show"]
-    }
 }

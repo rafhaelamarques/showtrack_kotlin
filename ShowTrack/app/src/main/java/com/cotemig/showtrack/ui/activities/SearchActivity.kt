@@ -10,6 +10,8 @@ import com.cotemig.showtrack.models.MazeApi
 import com.cotemig.showtrack.models.Serie
 import com.cotemig.showtrack.services.MazeInitializer
 import com.cotemig.showtrack.ui.adapters.SearchAdapter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import retrofit2.Call
 import retrofit2.Response
 
@@ -35,9 +37,13 @@ class SearchActivity : AppCompatActivity() {
                 response: Response<List<MazeApi>>
             ) {
                 response.body()?.let{
-                    showFeed(it)
+                    val listType = object : TypeToken<List<MazeApi>>() {}.type
+                    val list: List<MazeApi> = Gson().fromJson(response.body().toString(), listType)
+                    showFeed(list)
                 }
             }
+
+
 
             override fun onFailure(call: Call<List<MazeApi>>, t: Throwable) {
                 TODO("Not yet implemented")
