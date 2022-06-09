@@ -35,11 +35,11 @@ class SearchAdapter (var context: Context, var list: List<MazeApi>) : BaseAdapte
         var summary = view.findViewById<TextView>(R.id.summarySearch)
         var banner = view.findViewById<ImageView>(R.id.bannerSearch)
 
-        title.text = (list[position].serie?.name)
-        plataform.text = (list[position].serie?.plataform)
-        rating.text = (list[position].serie?.rating)
-        summary.text = (list[position].serie?.summary)
-        banner.load(list[position].serie?.image)
+//        title.text = (list[position].serie?.name)
+//        plataform.text = (list[position].serie?.plataform)
+//        rating.text = (list[position].serie?.rating)
+//        summary.text = (list[position].serie?.summary)
+//        banner.load(list[position].serie?.image)
 
         return view
     }
