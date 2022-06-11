@@ -8,5 +8,5 @@ import retrofit2.http.Path
 interface EpisodeService {
 
     @GET("shows/{id}?embed=nextepisode")
-    fun episodeDetails(@Path("id") id: Int?): Call<List<Episode>>
+    fun episodeSchedule(@Path("id") id: Int?): Call<Episode>
 }
