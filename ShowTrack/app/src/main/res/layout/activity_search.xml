@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.SearchActivity">
 
-    <ImageView
-        android:id="@+id/backButton"
+    <ImageButton
+        android:id="@+id/searchBackButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="32dp"
+        android:background="@color/transparent"
         android:src="@drawable/arrow_left_medium_red" />
 
     <TextView
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="32dp"
-        android:layout_toRightOf="@id/backButton"
+        android:layout_toRightOf="@id/searchBackButton"
         android:fontFamily="@font/glory_regular"
         android:text="Voltar"
         android:textColor="@color/cor_primaria"
