@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.CadastroActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="16sp"
+        android:background="@color/transparent"
+        android:src="@drawable/arrow_left_medium_red" />
+
+    <TextView
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_toRightOf="@id/backButton"
+        android:fontFamily="@font/glory_medium"
+        android:text="@string/voltar"
+        android:textColor="@color/cor_primaria"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_below="@+id/voltar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/logo_app"/>
+
+    <TextView
+        android:id="@+id/novoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/novo_usuario"
+        android:textColor="@color/cor_primaria"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/novoUsuario"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/outlined_border"
+        android:drawableLeft="@drawable/user_name_min"
+        android:drawablePadding="5dp"
+        android:hint="@string/nome"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/nome"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/outlined_border"
+        android:drawableLeft="@drawable/mail_min"
+        android:drawablePadding="5dp"
+        android:hint="@string/e_mail"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/usuario"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/email"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/outlined_border"
+        android:drawableLeft="@drawable/user_min"
+        android:drawablePadding="5dp"
+        android:hint="@string/usuario"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/usuario"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/outlined_border"
+        android:drawableLeft="@drawable/password_min"
+        android:drawablePadding="5dp"
+        android:hint="@string/senha"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/cor_secundaria"
+        android:text="@string/concluir"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_marginBottom="125dp"
+        android:layout_marginHorizontal="33dp"
+        android:layout_below="@id/senha"
+        android:layout_marginTop="43dp"/>
+
+</RelativeLayout>

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShowTrack">
         <activity
+            android:name=".ui.activities.CadastroActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.SearchActivity"
             android:exported="true">
             <intent-filter>
