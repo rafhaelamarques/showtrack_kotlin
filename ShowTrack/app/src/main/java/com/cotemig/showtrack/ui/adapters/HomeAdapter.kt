@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.cotemig.showtrack.models.Episode
+import com.cotemig.showtrack.models.Show
 
-class HomeAdapter (var context: Context, var list: List<Int>) : BaseAdapter() {
+class HomeAdapter (var context: Context, var list: MutableList<Show>) : BaseAdapter() {
     override fun getCount(): Int {
         return  list.size
     }

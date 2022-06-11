@@ -10,10 +10,15 @@ import android.widget.Toast
 import com.cotemig.showtrack.R
 import com.cotemig.showtrack.models.MazeResult
 import com.cotemig.showtrack.services.MazeInitializer
-import com.cotemig.showtrack.ui.adapters.HomeAdapter
 import com.cotemig.showtrack.ui.adapters.SearchAdapter
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
+import java.io.Serializable
+import java.util.ArrayList
+
 
 class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +27,10 @@ class SearchActivity : AppCompatActivity() {
 
         val searchText = findViewById<EditText>(R.id.searchBox)
         val searchBtn = findViewById<ImageButton>(R.id.searchButton)
+        val backBtn = findViewById<ImageButton>(R.id.searchBackButton)
 
         searchBtn.setOnClickListener { getSearchResult(show = searchText.text.toString()) }
+        backBtn.setOnClickListener { backToHome() }
     }
 
     private fun getSearchResult(show: String) {
@@ -53,23 +60,36 @@ class SearchActivity : AppCompatActivity() {
         })
     }
 
-    fun showResult(list: List<MazeResult>) {
+    private fun showResult(list: List<MazeResult>) {
+        val intent = Intent(this, HomeAfterActivity::class.java)
         val result = findViewById<ListView>(R.id.listSearch)
-        val listCard = findViewById<ListView>(R.id.listCards)
-        val listShowIds: ArrayList<Int> = arrayListOf<Int>()
-        val backBtn = findViewById<ImageButton>(R.id.searchBackButton)
 
-        listCard.adapter = HomeAdapter(this, listShowIds)
-        listCard.setOnItemClickListener { adapterView, view, i, l ->
-            listShowIds.add(list[i].show.id)
-            backBtn.setOnClickListener { backToHome(listShowIds) }
-        }
         result.adapter = SearchAdapter(this, list)
+
+        GlobalScope.launch {
+            delay(5000)
+            result.setOnItemClickListener { _, _, i, _ ->
+                intent.putExtra("id", list[i].show.id)
+                print (list[i].show.id)
+                startActivity(intent)
+            }
+        }
     }
 
-    private fun backToHome(ids: ArrayList<Int>) {
+//    private fun generateCards(list: List<MazeResult>) {
+//        val intent = Intent(this, HomeAfterActivity::class.java)
+//        GlobalScope.launch{
+//            delay(5000)
+//            val addButton = findViewById<ImageButton>(R.id.addSerieButton)
+//            addButton.setOnClickListener {
+//                intent.putExtra("shows", list as Serializable)
+//                startActivity(intent)
+//            }
+//        }
+//    }
+
+    private fun backToHome() {
         val intent = Intent(this, HomeAfterActivity::class.java)
-        intent.putIntegerArrayListExtra("id", ids)
         startActivity(intent)
     }
 }
