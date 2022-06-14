@@ -32,7 +32,7 @@
             android:paddingStart="40dp"
             android:text="@string/adicionar_nova_s_rie"
             android:textAllCaps="false"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="@font/glory_semibold"/>
         <ImageView
@@ -53,9 +53,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonPanel"
-        android:layout_marginTop="40dp"
-        android:clickable="true"
-        android:focusable="true"/>
+        android:divider="@color/transparent"
+        android:layout_marginTop="10dp" />
 
 
 </RelativeLayout>

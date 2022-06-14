@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.DetailsActivity">
+    tools:context=".ui.activities.DetailsActivity"
+    android:id="@+id/layoutDetails">
 
     <RelativeLayout
         android:id="@+id/detailsTop"
@@ -112,6 +113,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/glory_semibold"
             android:textColor="@color/dark_grey"
+            android:textAlignment="center"
             android:textSize="14sp" />
 
 

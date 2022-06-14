@@ -10,7 +10,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:focusable="false"
-        android:focusableInTouchMode="false">
+        android:focusableInTouchMode="false"
+        android:descendantFocusability="blocksDescendants">
 
         <ImageView
             android:id="@+id/bannerSearch"
@@ -18,7 +19,8 @@
             android:layout_height="126dp"
             android:layout_margin="10dp"
             android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusableInTouchMode="false"
+            android:descendantFocusability="blocksDescendants"/>
 
         <TextView
             android:id="@+id/tittleSearch"
@@ -30,7 +32,8 @@
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusableInTouchMode="false"
+            android:descendantFocusability="blocksDescendants"/>
 
         <TextView
             android:id="@+id/plataformSearch"
@@ -42,7 +45,8 @@
             android:layout_below="@+id/tittleSearch"
             android:layout_toRightOf="@id/bannerSearch"
             android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusableInTouchMode="false"
+            android:descendantFocusability="blocksDescendants"/>
 
         <TextView
             android:id="@+id/ratingSearch"
@@ -55,7 +59,8 @@
             android:layout_toEndOf="@id/plataformSearch"
             android:layout_marginStart="80dp"
             android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusableInTouchMode="false"
+            android:descendantFocusability="blocksDescendants"/>
 
         <TextView
             android:id="@+id/summarySearch"
@@ -70,6 +75,7 @@
             android:textAlignment="textStart"
             android:focusable="false"
             android:focusableInTouchMode="false"
+            android:descendantFocusability="blocksDescendants"
             />
 
         <ImageButton
@@ -81,7 +87,8 @@
             android:background="@color/transparent"
             android:src="@drawable/plus_medium"
             android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusableInTouchMode="false"
+            android:descendantFocusability="blocksDescendants"/>
     </RelativeLayout>
 
 </RelativeLayout>

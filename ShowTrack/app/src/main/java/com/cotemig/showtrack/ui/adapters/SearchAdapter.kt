@@ -33,11 +33,11 @@ class SearchAdapter (var context: Context, var list: List<MazeResult>) : BaseAda
         val summary = view.findViewById<TextView>(R.id.summarySearch)
         val banner = view.findViewById<ImageView>(R.id.bannerSearch)
 
-        title.text = (list[position].show.name)
-        plataform.text = (list[position].show.webChannel?.name)
-        rating.text = (list[position].show.rating?.average)
-        summary.text = (list[position].show.summary)
-        banner.load(list[position].show.image?.medium)
+        title.text = list[position].show?.name
+        plataform.text = list[position].show?.webChannel?.name
+        rating.text = list[position].show?.rating?.average
+        summary.text = list[position].show?.summary
+        banner.load(list[position].show?.image?.medium)
 
         return view
     }

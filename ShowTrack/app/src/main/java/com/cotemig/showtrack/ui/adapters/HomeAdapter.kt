@@ -40,9 +40,9 @@ class HomeAdapter (var context: Context, var list: List<Episode>) : BaseAdapter(
         title.text = (list[position].name)
         plataform.text = (list[position].webChannel?.name)
         rating.text = (list[position].rating?.average)
-        episode.text = (list[position].embedded.nextepisode.name)
-        date.text = (list[position].embedded.nextepisode.airdate)
-        duration.text = (list[position].embedded.nextepisode.airtime)
+        episode.text = (list[position].embedded?.nextepisode?.name)
+        date.text = (list[position].embedded?.nextepisode?.airdate)
+        duration.text = (list[position].embedded?.nextepisode?.airtime)
         banner.load(list[position].image?.medium)
 
         return view

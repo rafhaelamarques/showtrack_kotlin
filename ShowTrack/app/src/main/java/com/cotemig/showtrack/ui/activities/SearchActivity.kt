@@ -9,6 +9,7 @@ import android.widget.ListView
 import android.widget.Toast
 import com.cotemig.showtrack.R
 import com.cotemig.showtrack.models.MazeResult
+import com.cotemig.showtrack.models.Show
 import com.cotemig.showtrack.services.MazeInitializer
 import com.cotemig.showtrack.ui.adapters.SearchAdapter
 import kotlinx.coroutines.GlobalScope
@@ -64,30 +65,13 @@ class SearchActivity : AppCompatActivity() {
 
         result.adapter = SearchAdapter(this, list)
 
-        GlobalScope.launch {
-            delay(5000)
-            result.setOnItemClickListener { _, _, i, _ ->
-                intent.putExtra("id", list[i].show.id)
-                print (list[i].show.id)
-                startActivity(intent)
-            }
+        result.setOnItemClickListener { _, _, i, _ ->
+            intent.putExtra("id", list[i].show?.id)
+            startActivity(intent)
         }
     }
 
-//    private fun generateCards(list: List<MazeResult>) {
-//        val intent = Intent(this, HomeAfterActivity::class.java)
-//        GlobalScope.launch{
-//            delay(5000)
-//            val addButton = findViewById<ImageButton>(R.id.addSerieButton)
-//            addButton.setOnClickListener {
-//                intent.putExtra("shows", list as Serializable)
-//                startActivity(intent)
-//            }
-//        }
-//    }
-
     private fun backToHome() {
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
+        finish()
     }
 }

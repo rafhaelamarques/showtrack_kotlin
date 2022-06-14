@@ -8,11 +8,12 @@ import android.widget.ListView
 import android.widget.RelativeLayout
 import android.widget.Toast
 import com.cotemig.showtrack.R
-import com.cotemig.showtrack.models.Episode
+import com.cotemig.showtrack.models.*
 import com.cotemig.showtrack.services.MazeInitializer
 import com.cotemig.showtrack.ui.adapters.HomeAdapter
 import retrofit2.Call
 import retrofit2.Response
+import java.io.Serializable
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,10 @@ class HomeActivity : AppCompatActivity() {
         val addButton = findViewById<RelativeLayout>(R.id.buttonPanel)
         addButton.setOnClickListener { addSerie() }
 
-        getNextEpisode()
+        val id = intent.getSerializableExtra("id")
+        if (id != null){
+            getNextEpisode()
+        }
     }
 
     private fun addSerie() {
@@ -36,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
         val cards: MutableList<Episode> = mutableListOf()
 
         val s = MazeInitializer().getEpisodeService()
-        val call = s.episodeSchedule(2993)
+        val call = s.episodeSchedule(id as Int?)
 
         call.enqueue(object : retrofit2.Callback<Episode> {
             override fun onResponse(
@@ -65,10 +69,10 @@ class HomeActivity : AppCompatActivity() {
     private fun showCard(episode: List<Episode>){
         val cards = findViewById<ListView>(R.id.listCards)
         cards.adapter = HomeAdapter(this, episode)
-        
-        cards.setOnItemClickListener { adapterView, view, i, l ->
+
+        cards.setOnItemClickListener { _, _, i, _ ->
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("details", cards)
+            intent.putExtra("details", episode[i])
             startActivity(intent)
         }
     }
