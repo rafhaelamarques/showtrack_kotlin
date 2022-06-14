@@ -12,10 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShowTrack">
         <activity
+            android:name=".ui.activities.DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.CadastroActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.SearchActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".ui.activities.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,16 +30,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.HomeAfterActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activities.HomeActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.activities.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -16,8 +16,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
-import java.io.Serializable
-import java.util.ArrayList
 
 
 class SearchActivity : AppCompatActivity() {
@@ -61,7 +59,7 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun showResult(list: List<MazeResult>) {
-        val intent = Intent(this, HomeAfterActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         val result = findViewById<ListView>(R.id.listSearch)
 
         result.adapter = SearchAdapter(this, list)
@@ -89,7 +87,7 @@ class SearchActivity : AppCompatActivity() {
 //    }
 
     private fun backToHome() {
-        val intent = Intent(this, HomeAfterActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 }
