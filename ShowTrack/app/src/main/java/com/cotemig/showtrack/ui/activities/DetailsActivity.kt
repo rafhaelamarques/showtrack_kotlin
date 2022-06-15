@@ -54,7 +54,7 @@ class DetailsActivity : AppCompatActivity() {
         intent.action=Intent.ACTION_SEND
         intent.putExtra(Intent.EXTRA_TEXT, url)
         intent.type="text/plain"
-        startActivity(Intent.createChooser(intent,"Share To: "))
+        startActivity(Intent.createChooser(intent,"Compartilhar em: "))
 
     }
 
