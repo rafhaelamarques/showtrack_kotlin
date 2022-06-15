@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.ForgotActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/btnBackButton"
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/transparent"
+        android:src="@drawable/arrow_left_medium_red" />
+
+    <TextView
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/btnBackButton"
+        android:fontFamily="@font/glory_medium"
+        android:text="@string/voltar"
+        android:textColor="@color/cor_primaria"
+        android:textSize="20sp" />
+
+
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="345dp"
+        android:layout_height="137dp"
+        android:layout_below="@id/voltar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo_app" />
+
+
+    <TextView
+        android:id="@+id/esquecisenha"
+        android:layout_width="250dp"
+        android:layout_height="27dp"
+        android:layout_below="@id/logo2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/esqueci_minha_senha"
+        android:textColor="#800000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/insiraemailcadastrado"
+        android:layout_width="345dp"
+        android:layout_height="85dp"
+        android:layout_below="@id/esquecisenha"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/glory_regular"
+        android:gravity=""
+        android:text="@string/insira_o_email_cadastrado_no_app_para_recuperacao_de_senha"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/insiraemailcadastrado"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/outlined_border"
+        android:drawablePadding="5dp"
+        android:hint="E-mail"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnSolicitarSenha"
+        android:layout_width="351dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/email"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="30dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/glory_regular"
+        android:background="@drawable/background_button"
+        android:text="Solicitar senha"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

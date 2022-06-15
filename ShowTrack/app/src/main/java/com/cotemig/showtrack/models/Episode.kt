@@ -4,9 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.Serializable
 
-@Serializable
 data class Episode(
     @SerializedName("id") @Expose val id: Int,
     @SerializedName("name") @Expose val name: String?,
@@ -52,7 +50,6 @@ data class Episode(
     }
 }
 
-@Serializable
 data class Embedded(@SerializedName("nextepisode") @Expose val nextepisode: NextEpisode?) : Parcelable {
     constructor(parcel: Parcel) : this(parcel.readParcelable(NextEpisode::class.java.classLoader)) {
     }
@@ -76,7 +73,6 @@ data class Embedded(@SerializedName("nextepisode") @Expose val nextepisode: Next
     }
 }
 
-@Serializable
 data class NextEpisode(
     @SerializedName("id") @Expose val id: Int,
     @SerializedName("url") @Expose val url: String?,

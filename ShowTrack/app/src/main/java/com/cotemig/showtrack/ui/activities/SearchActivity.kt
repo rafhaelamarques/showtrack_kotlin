@@ -9,12 +9,8 @@ import android.widget.ListView
 import android.widget.Toast
 import com.cotemig.showtrack.R
 import com.cotemig.showtrack.models.MazeResult
-import com.cotemig.showtrack.models.Show
 import com.cotemig.showtrack.services.MazeInitializer
 import com.cotemig.showtrack.ui.adapters.SearchAdapter
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
 

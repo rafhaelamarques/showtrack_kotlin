@@ -1,14 +1,14 @@
 package com.cotemig.showtrack.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
+import android.os.Parcelable
 import android.widget.ListView
 import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.cotemig.showtrack.R
-import com.cotemig.showtrack.models.*
+import com.cotemig.showtrack.models.Episode
 import com.cotemig.showtrack.services.MazeInitializer
 import com.cotemig.showtrack.ui.adapters.HomeAdapter
 import retrofit2.Call
@@ -16,17 +16,29 @@ import retrofit2.Response
 import java.io.Serializable
 
 class HomeActivity : AppCompatActivity() {
+    private var cards: MutableList<Episode> = mutableListOf()
+    private var ids: ArrayList<Int> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState != null) {
+            ids = savedInstanceState.getIntegerArrayList("ids") as ArrayList<Int>
+        }
         setContentView(R.layout.activity_home)
 
         val addButton = findViewById<RelativeLayout>(R.id.buttonPanel)
         addButton.setOnClickListener { addSerie() }
 
         val id = intent.getSerializableExtra("id")
-        if (id != null){
-            getNextEpisode()
+        if (id != null) {
+            ids.add(id as Int)
+            ids.forEach {
+                getNextEpisode()
+            }
         }
+    }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        super.onSaveInstanceState(savedInstanceState)
     }
 
     private fun addSerie() {
@@ -58,7 +70,7 @@ class HomeActivity : AppCompatActivity() {
             override fun onFailure(call: Call<Episode>, t: Throwable) {
                 Toast.makeText(
                     this@HomeActivity,
-                    "Ops",
+                    "Erro ao carregar lista",
                     Toast.LENGTH_LONG
                 ).show()
                 throw  t

@@ -4,9 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.Serializable
 
-@Serializable
 data class Show(
     @SerializedName("id") @Expose val id: Int,
     @SerializedName("name") @Expose val name: String?,
@@ -49,7 +47,6 @@ data class Show(
     }
 }
 
-@Serializable
 data class Rating(@SerializedName("average") @Expose val average: String? = "N/A") : Parcelable {
     constructor(parcel: Parcel) : this(parcel.readString()) {
     }
@@ -73,7 +70,6 @@ data class Rating(@SerializedName("average") @Expose val average: String? = "N/A
     }
 }
 
-@Serializable
 data class WebChannel(
     @SerializedName("name") @Expose val name: String? = "N/A",
     @SerializedName("officialSite") @Expose val officialSite: String?
@@ -104,7 +100,6 @@ data class WebChannel(
     }
 }
 
-@Serializable
 data class Image(
     @SerializedName("medium") @Expose val medium: String?,
     @SerializedName("original") @Expose val original: String?

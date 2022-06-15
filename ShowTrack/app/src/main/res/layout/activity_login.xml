@@ -1,9 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.activities.LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="345dp"
+        android:layout_height="137dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo_app"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/bemvindo"
+        android:layout_width="500dp"
+        android:layout_height="66dp"
+        android:layout_below="@id/logo2"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/bem_vindo_a_ao_showtrack"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/a"
+        android:layout_width="51dp"
+        android:layout_height="27dp"
+        android:layout_below="@id/bemvindo"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/login"
+        android:textColor="#800000"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="345dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/a"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/outlined_border"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/glory_regular"
+        android:hint="@string/usuario"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColorHint="#C1C3CB"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="345dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/glory_regular"
+        android:drawablePadding="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/outlined_border"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:layout_below="@id/login"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#C1C3CB"
+        android:textSize="15sp"
+        android:hint="@string/senha"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnForgot"
+        android:layout_width="117dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/password"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="19dp"
+        android:background="@color/white"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/esqueceu_a_senha"
+        android:textAllCaps="false"
+        android:textColor="#800000"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="351dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/btnForgot"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/entrar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="351dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/btnLogin"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/glory_regular"
+        android:text="@string/cadastrar"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white" />
+</RelativeLayout>

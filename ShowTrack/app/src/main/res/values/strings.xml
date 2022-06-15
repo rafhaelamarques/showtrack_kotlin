@@ -12,4 +12,11 @@
     <string name="senha">Senha</string>
     <string name="concluir">Concluir</string>
     <string name="home_page">Home Page</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="bem_vindo_a_ao_showtrack">Bem Vindo(a) ao ShowTrack!</string>
+    <string name="login">Login</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="insira_o_email_cadastrado_no_app_para_recuperacao_de_senha">Insira o e-mail cadastrado no app para \nrecuperação de senha</string>
 </resources>

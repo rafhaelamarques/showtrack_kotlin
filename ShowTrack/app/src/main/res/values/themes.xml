@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.ShowTrack" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/cor_primaria</item>
-        <item name="colorPrimaryVariant">@color/cor_primaria</item>
+        <item name="colorPrimary">@color/cor_secundaria</item>
+        <item name="colorPrimaryVariant">@color/cor_secundaria</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/black</item>

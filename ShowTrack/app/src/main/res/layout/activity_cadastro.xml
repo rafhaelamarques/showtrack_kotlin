@@ -109,6 +109,7 @@
         android:textSize="16sp" />
 
     <Button
+        android:id="@+id/concluirBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/cor_secundaria"
