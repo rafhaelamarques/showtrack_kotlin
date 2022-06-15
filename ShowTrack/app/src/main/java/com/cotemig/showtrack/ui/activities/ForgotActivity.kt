@@ -12,13 +12,13 @@ class ForgotActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot)
 
-        var btnBackButton = findViewById<ImageButton>(R.id.btnBackButton)
+        val btnBackButton = findViewById<ImageButton>(R.id.btnBackButton)
 
         btnBackButton.setOnClickListener{
             backButtonClick()
         }
 
-        var btnSolicitar = findViewById<Button>(R.id.btnSolicitarSenha)
+        val btnSolicitar = findViewById<Button>(R.id.btnSolicitarSenha)
 
         btnSolicitar.setOnClickListener {
             solicitarSenhaClick()
@@ -26,7 +26,7 @@ class ForgotActivity : AppCompatActivity() {
     }
 
     fun backButtonClick() {
-        var intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
 

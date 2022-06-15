@@ -12,13 +12,13 @@ class CadastroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-        var btnBackButton = findViewById<ImageButton>(R.id.backButton)
+        val btnBackButton = findViewById<ImageButton>(R.id.backButton)
 
         btnBackButton.setOnClickListener{
             backButtonClick()
         }
 
-        var btnConcluir = findViewById<Button>(R.id.concluirBtn)
+        val btnConcluir = findViewById<Button>(R.id.concluirBtn)
 
         btnConcluir.setOnClickListener {
             concluirClick()
@@ -26,7 +26,7 @@ class CadastroActivity : AppCompatActivity() {
     }
 
     fun backButtonClick() {
-        var intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
 
