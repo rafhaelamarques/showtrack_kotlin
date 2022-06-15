@@ -16,13 +16,8 @@ import retrofit2.Response
 import java.io.Serializable
 
 class HomeActivity : AppCompatActivity() {
-    private var cards: MutableList<Episode> = mutableListOf()
-    private var ids: ArrayList<Int> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState != null) {
-            ids = savedInstanceState.getIntegerArrayList("ids") as ArrayList<Int>
-        }
         setContentView(R.layout.activity_home)
 
         val addButton = findViewById<RelativeLayout>(R.id.buttonPanel)
@@ -30,19 +25,13 @@ class HomeActivity : AppCompatActivity() {
 
         val id = intent.getSerializableExtra("id")
         if (id != null) {
-            ids.add(id as Int)
-            ids.forEach {
-                getNextEpisode()
-            }
+            getNextEpisode()
         }
-    }
-
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        super.onSaveInstanceState(savedInstanceState)
     }
 
     private fun addSerie() {
         val intent = Intent(this, SearchActivity::class.java)
+        intent.setClassName(this,"com.cotemig.showtrack.ui.activities.SearchActivity")
         startActivity(intent)
     }
 

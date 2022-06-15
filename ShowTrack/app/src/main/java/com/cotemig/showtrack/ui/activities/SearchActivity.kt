@@ -62,6 +62,8 @@ class SearchActivity : AppCompatActivity() {
         result.adapter = SearchAdapter(this, list)
 
         result.setOnItemClickListener { _, _, i, _ ->
+            intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+            intent.setClassName(this,"com.cotemig.showtrack.ui.activities.HomeActivity")
             intent.putExtra("id", list[i].show?.id)
             startActivity(intent)
         }
