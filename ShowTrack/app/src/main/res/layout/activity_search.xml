@@ -23,7 +23,7 @@
         android:layout_marginTop="32dp"
         android:layout_toRightOf="@id/searchBackButton"
         android:fontFamily="@font/glory_regular"
-        android:text="Voltar"
+        android:text="@string/voltar"
         android:textColor="@color/cor_primaria"
         android:textSize="20sp" />
 
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/searchRow"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="10dp"
+        android:divider="@color/transparent" />
 
 </RelativeLayout>

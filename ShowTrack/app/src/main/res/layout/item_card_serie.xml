@@ -11,6 +11,9 @@
         android:layout_centerHorizontal="true"
         android:elevation="2dp"
         app:cardCornerRadius="8dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:descendantFocusability="blocksDescendants"
         android:layout_margin="24dp">
 
         <RelativeLayout
@@ -56,77 +59,92 @@
                 android:layout_marginStart="80dp"
                 />
 
-            <ImageButton
-                android:id="@+id/iconShow"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/tv_play_min"
-                android:layout_below="@+id/seriePlataform"
-                android:layout_toRightOf="@id/serieBanner"
-                android:background="@color/transparent"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="12dp"
-                />
-
-            <TextView
-                android:id="@+id/nextEpText"
+            <RelativeLayout
+                android:id="@+id/titleRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/seriePlataform"
-                android:layout_toRightOf="@id/iconShow"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="4dp"
-                android:fontFamily="@font/glory_semibold"/>
-
-            <ImageButton
-                android:id="@+id/iconCalendar"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/calendar_min"
-                android:layout_below="@+id/iconShow"
                 android:layout_toRightOf="@id/serieBanner"
-                android:background="@color/transparent"
-                android:layout_marginBottom="4dp"
-                />
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
 
-            <TextView
-                android:id="@+id/nextEpDate"
+                <ImageButton
+                    android:id="@+id/iconShow"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/tv_play_min"
+                    android:background="@color/transparent"
+                    />
+
+                <TextView
+                    android:id="@+id/nextEpText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iconShow"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/glory_semibold"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/dateRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nextEpText"
-                android:layout_toRightOf="@id/iconCalendar"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="6dp"
-                android:layout_marginLeft="4dp"
-                android:fontFamily="@font/glory_semibold"/>
-
-            <ImageButton
-                android:id="@+id/iconClock"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/clock_min"
-                android:layout_below="@+id/iconCalendar"
+                android:layout_below="@+id/titleRow"
                 android:layout_toRightOf="@id/serieBanner"
-                android:background="@color/transparent"
-                />
+                android:layout_marginBottom="8dp">
 
-            <TextView
-                android:id="@+id/nextEpDuration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/nextEpDate"
-                android:layout_toRightOf="@id/iconClock"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="6dp"
-                android:layout_marginLeft="4dp"
-                android:fontFamily="@font/glory_semibold"/>
+                <ImageButton
+                    android:id="@+id/iconCalendar"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/calendar_min"
+                    android:background="@color/transparent"
+                    />
+
+                <TextView
+                    android:id="@+id/nextEpDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iconCalendar"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/glory_semibold"/>
+
+            </RelativeLayout>
+
+           <RelativeLayout
+               android:id="@+id/durationRow"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/dateRow"
+               android:layout_toRightOf="@id/serieBanner"
+               android:layout_marginBottom="8dp">
+
+               <ImageButton
+                   android:id="@+id/iconClock"
+                   android:layout_width="16dp"
+                   android:layout_height="16dp"
+                   android:src="@drawable/clock_min"
+                   android:background="@color/transparent"
+                   />
+
+               <TextView
+                   android:id="@+id/nextEpDuration"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@id/iconClock"
+                   android:textSize="12sp"
+                   android:textColor="@color/black"
+                   android:layout_centerInParent="true"
+                   android:layout_marginLeft="4dp"
+                   android:fontFamily="@font/glory_semibold"/>
+           </RelativeLayout>
 
             <ImageButton
                 android:id="@+id/infoSerieButton"
@@ -134,7 +152,8 @@
                 android:layout_height="30dp"
                 android:src="@drawable/arrow_right_medium"
                 android:background="@color/transparent"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentEnd="true"
+                android:layout_margin="6dp"/>
 
         </RelativeLayout>
 

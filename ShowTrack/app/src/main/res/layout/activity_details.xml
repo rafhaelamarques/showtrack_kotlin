@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.DetailsActivity"
+    android:id="@+id/layoutDetails">
+
+    <RelativeLayout
+        android:id="@+id/detailsTop"
+        android:layout_width="match_parent"
+        android:layout_height="365dp"
+        android:background="@color/cor_secundaria">
+
+        <ImageButton
+            android:id="@+id/detailsBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/transparent"
+            android:src="@drawable/arrow_left_medium_white" />
+
+        <TextView
+            android:id="@+id/detailsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="32dp"
+            android:layout_toRightOf="@id/detailsBack"
+            android:fontFamily="@font/glory_regular"
+            android:text="@string/voltar"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/transparent"
+            android:src="@drawable/share_medium" />
+
+        <ImageView
+            android:id="@+id/detailsBanner"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/shareButton"
+            />
+
+        <TextView
+            android:id="@+id/detailsDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/glory_semibold"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detailsBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/detailsTop">
+
+        <TextView
+            android:id="@+id/serieTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/glory_semibold"
+            android:textColor="@color/cor_secundaria"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/episodeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/serieTittle"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/glory_semibold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/episodeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/episodeNumber"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/glory_semibold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/episodeSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/episodeName"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/glory_semibold"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
